@@ -14,7 +14,7 @@ body.dark {
 }
 
 .container {
-  width: 900px;
+  max-width: 900px;
   margin: auto;
 }
 
@@ -30,16 +30,6 @@ h1 {
   margin: 0;
   float: left;
 }
-
-#toggle {
-  float: right;
-  margin-top: 29px;
-}
-
-#toggle:hover {
-  cursor: pointer;
-}
-
 
 main {
   clear: both;
@@ -60,6 +50,15 @@ a {
   color: var(--amulya-red);
 }
 
+#toggle {
+  float: right;
+  margin-top: 29px;
+}
+
+#toggle:hover {
+  cursor: pointer;
+}
+
 .sun {
   display: none;
 }
@@ -75,4 +74,19 @@ a {
 
 .dark .sun {
   display: block;
+}
+
+@media only screen and (max-width: 615px) {
+  h1 {
+    max-width: 300px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  #toggle {
+    position: absolute;
+    margin: 0;
+    top: 119px;
+    right: 7px;
+  }
 }
