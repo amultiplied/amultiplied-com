@@ -34,6 +34,7 @@ h1 {
 main {
   clear: both;
   color: #1F1F1F;
+  margin-bottom: 30px;
 }
 
 .dark main {
@@ -76,17 +77,25 @@ a {
   display: block;
 }
 
-@media only screen and (max-width: 615px) {
+@media only screen and (max-width: 670px) {
   h1 {
     max-width: 300px;
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 960px) {
+  .container {
+    margin: 0 30px;
+  }
+
+  header {
+    margin-top: 30px;
+  }
+
   #toggle {
     position: absolute;
     margin: 0;
-    top: 119px;
-    right: 7px;
+    top: 59px;
+    right: 37px;
   }
 }
