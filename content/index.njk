@@ -11,16 +11,16 @@ const eleventyNavigation = {
 <article class="featured-post">
 	<h2 class="featured-post-title"><a href="{{ latestPost.url }}">{{ latestPost.data.title }}</a></h2>
 	<time class="featured-post-date" datetime="{{ latestPost.date | htmlDateString }}">{{ latestPost.date | readableDate }}</time>
+	{%- if latestPost.data.tags %}
+	<span class="postlist-tags featured-post-tags">
+		{%- for tag in latestPost.data.tags %}
+			{%- if tag != "posts" %}
+			<span class="postlist-tag">{{ tag }}</span>
+			{%- endif %}
+		{%- endfor %}
+	</span>
+	{%- endif %}
 	{{ latestPost.templateContent | safe }}
 </article>
 {% endif %}
 
-<p class="all-posts-heading">All Posts</p>
-<ul class="postlist">
-{%- for post in allPosts %}
-	<li class="postlist-item{% if post.url == page.url %} postlist-item-active{% endif %}">
-		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLL d, yyyy") }}</time>
-		<a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
-	</li>
-{%- endfor %}
-</ul>
