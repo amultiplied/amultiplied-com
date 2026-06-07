@@ -196,7 +196,8 @@ header {
 	font-size: 3.5em;
 	font-weight: 700;
 	font-family: "Honk", sans-serif;
-	color: unset;
+	color: var(--text-color) !important;
+	font-palette: normal;
 }
 .home-link:link:not(:hover) {
 	text-decoration: none;
@@ -269,7 +270,9 @@ main h1 {
 	color: var(--text-color);
 	text-decoration: none;
 }
-.featured-post-title a[href^="#"] {
+.featured-post-title a[href^="#"],
+.featured-post-title .ha,
+main h1 .ha {
 	display: none;
 }
 .featured-post-date {
