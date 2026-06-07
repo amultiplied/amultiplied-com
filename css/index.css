@@ -1,12 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;600&display=swap");
-
-@font-face {
-	font-family: "Honk";
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url("/fonts/Honk-color.woff2") format("woff2");
-}
+@import url("https://fonts.googleapis.com/css2?family=Honk&family=Kumbh+Sans:wght@300;600&display=swap");
 
 /* Defaults */
 :root {
@@ -204,7 +196,6 @@ header {
 	font-size: 3.5em;
 	font-weight: 700;
 	font-family: "Honk", sans-serif;
-	color: #FF281B;
 }
 .home-link:link:not(:hover) {
 	text-decoration: none;
