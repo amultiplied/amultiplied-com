@@ -215,6 +215,15 @@ header {
 .nav-item a[href]:not(:hover) {
 	text-decoration: none;
 }
+.nav-item a[href] svg {
+	vertical-align: -0.2em;
+}
+.nav-item a[href]:not(:hover) svg {
+	border-bottom: none;
+}
+.nav-item a[href]:hover svg {
+	border-bottom: 1px solid currentColor;
+}
 .nav a[href][aria-current="page"] {
 	text-decoration: underline;
 }
