@@ -240,6 +240,7 @@ header {
 	color: var(--color-gray-50);
 	min-width: 6.5em;
 	flex-shrink: 0;
+	padding-left: 0.75em;
 }
 .postlist-link {
 	font-weight: 600;
@@ -288,6 +289,7 @@ main h1 {
 	text-transform: uppercase;
 	letter-spacing: 0.08em;
 	color: var(--color-gray-50);
+	padding-left: 0.75em;
 	margin-bottom: 0.5em;
 }
 
@@ -309,6 +311,7 @@ main h1 {
 	margin-left: auto;
 	align-items: center;
 	flex-shrink: 0;
+	padding-right: 0.75em;
 }
 .postlist-tag {
 	display: inline-flex;
