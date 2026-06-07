@@ -3,27 +3,24 @@ const eleventyNavigation = {
 	key: "Home",
 	order: 1
 };
-
-const numberOfLatestPostsToShow = 3;
 ---
-{% set postsCount = collections.posts | length %}
-{% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
-<h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>
+{% set allPosts = collections.posts | reverse %}
+{% set latestPost = allPosts[0] %}
 
-{% set postslist = collections.posts | head(-1 * numberOfLatestPostsToShow) %}
-{% set postslistCounter = postsCount %}
-{% include "postslist.njk" %}
-
-{% set morePosts = postsCount - numberOfLatestPostsToShow %}
-{% if morePosts > 0 %}
-<p>{{ morePosts }} more post{% if morePosts != 1 %}s{% endif %} can be found in <a href="blog.njk">the archive</a>.</p>
+{% if latestPost %}
+<article class="featured-post">
+	<h2 class="featured-post-title"><a href="{{ latestPost.url }}">{{ latestPost.data.title }}</a></h2>
+	<time class="featured-post-date" datetime="{{ latestPost.date | htmlDateString }}">{{ latestPost.date | readableDate }}</time>
+	{{ latestPost.templateContent | safe }}
+</article>
 {% endif %}
 
-{# List every content page in the project #}
-{#
-<ul>
-	{%- for entry in collections.all %}
-	<li><a href="{{ entry.url }}"><code>{{ entry.url }}</code></a></li>
-	{%- endfor %}
+<p class="all-posts-heading">All Posts</p>
+<ul class="postlist">
+{%- for post in allPosts %}
+	<li class="postlist-item{% if post.url == page.url %} postlist-item-active{% endif %}">
+		<time class="postlist-date" datetime="{{ post.date | htmlDateString }}">{{ post.date | readableDate("LLL d, yyyy") }}</time>
+		<a href="{{ post.url }}" class="postlist-link">{% if post.data.title %}{{ post.data.title }}{% else %}<code>{{ post.url }}</code>{% endif %}</a>
+	</li>
+{%- endfor %}
 </ul>
-#}
