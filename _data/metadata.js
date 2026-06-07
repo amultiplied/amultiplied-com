@@ -1,5 +1,5 @@
 export default {
-	title: "Amulya Aradhyula",
+	title: "Amulya's Website",
 	url: "https://amultiplied.com/",
 	language: "en",
 	description: "Amulya's Web Homepage",
